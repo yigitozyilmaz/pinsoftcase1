@@ -8,6 +8,11 @@ import { addToCart } from "../redux/actions";
 
 
 const Hotel = ({hotel}) => {
+
+  const cartItems = useSelector((state) => state.cart);  
+
+  console.log(cartItems);
+  
   const dispatch = useDispatch();
     
   const handleAddToCart = () => {
@@ -26,7 +31,7 @@ const Hotel = ({hotel}) => {
          <h1>{hotel.location.split(",")[0]}</h1>
          <h1>{hotel.price}TL</h1>
          <h1>{hotel.rooms.map((room, index) => (
-          <h1 key={index}>{room.type}</h1>
+          <div key={index}>{room.type}</div>
         ))}       </h1>
          <button  onClick={handleAddToCart}>
         Add to Cart

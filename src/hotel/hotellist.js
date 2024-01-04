@@ -8,9 +8,7 @@ import Hotel from "./hotel.js"
 
 
 const HotelList = () => { 
-   const cartItems = useSelector((state) => state.cart);  
-
-  console.log(cartItems);
+   
     let result = hotellist.filter(function (obj) {
       
       return (
