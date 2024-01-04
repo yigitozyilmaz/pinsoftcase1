@@ -1,17 +1,18 @@
 "use client"
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import hotellist from "../data/hotels.json"
 import Hotel from "./hotel.js"
-import { object } from "prop-types";
 
 
 
-const HotelList = () => {
-    const dispatch = useDispatch();
-    const [inputValue, setInputValue] = useState("");
+
+const HotelList = () => { 
+   const cartItems = useSelector((state) => state.cart);  
+
+  console.log(cartItems);
     let result = hotellist.filter(function (obj) {
-      console.log(obj);
+      
       return (
         obj
 

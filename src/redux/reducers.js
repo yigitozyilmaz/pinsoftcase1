@@ -10,7 +10,7 @@ const initialState = {
         );
         if (existingItem) {
           const updatedCart =  state.cart.filter(
-            (item) => item.id !== action.payload
+            (item) => item.id !== action.payload.id
           );
           return {
             ...state,
@@ -23,7 +23,7 @@ const initialState = {
             id: action.payload.id,
             image:action.payload.image,
             name: action.payload.name,
-            location: location.payload.location,
+            location: action.payload.location,
             price: action.payload.price,
             description: action.payload.description,
             rooms: action.payload.rooms,
@@ -31,6 +31,7 @@ const initialState = {
           return {
             ...state,
             cart: [...state.cart, newItem],
+            
           };
           
         }
