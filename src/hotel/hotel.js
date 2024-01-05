@@ -55,7 +55,7 @@ const Hotel = ({hotel}) => {
         
         <div  className='bg-gray-100 h-96 w-60 m-10 text-center grid place-items-center border border-gray-300 rounded-md' id='hotelCardDiv'>
          <img src={hotel.image} className='w-52 h-52' id='img'></img>
-         <h1 className='text-2x1 font-bold text-gray-800'>{hotel.name}</h1>
+         <h1 className='text-xl font-bold text-gray-800'>{hotel.name}</h1>
          <h1 className='font-bold text-gray-600'>{hotel.location.split(",")[0]}</h1>
          <h1 className='font-bold ' >{hotel.price} TL</h1>
          {
@@ -68,21 +68,22 @@ const Hotel = ({hotel}) => {
    
       {isModalOpen && (
         <div className="modal">
-          <div className="modal-content">
+          <div className="modal-content ">
             <span className="close" onClick={closeModal}>
               &times;
             </span>
-            <img src={hotel.image} className='w-96 h-96 ' ></img>
+            <h1 className='text-2xl font-bold text-red-800 p-2'>{hotel.name}</h1>
+            <img src={hotel.image} className='w-60 h-60 ml-10' ></img>
             
-            <h1>{hotel.description}</h1>
+            <h1 className='text-2xl font-bold text-gray-800 p-2 max-w-xs whitespace-pre-line' >{hotel.description}</h1>
             
-            <div className='flex' >
+            <div  >
               
-            <h1>{hotel.rooms.map((room, index) => (
-          <div key={index}><h1>{room.type}</h1>
-          <h1>{room.capacity} Kişilik </h1>
-          <h1>{room.price} TL </h1></div>
-        ))}</h1>          
+            {hotel.rooms.map((room, index) => (
+          <div key={index}><h1 className='text-red-800 text-xl font-bold'>{room.type}</h1>
+          <h1 className='text-gray-800 text-lg'>{room.capacity} Kişilik </h1>
+          <h1 className='text-black-800 text-lg'>{room.price} TL </h1></div>
+        ))}          
         </div>
         </div>
         </div>
