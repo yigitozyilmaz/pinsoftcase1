@@ -6,8 +6,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import { red } from '@mui/material/colors';
+import Room from "./hotelroom.js";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-
+import {CameraControls} from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 const Hotel = ({hotel}) => {
   const favlist = useSelector((state) => state.cart);  
   const [isModalOpen, setModalOpen] = useState(false);
@@ -73,7 +75,18 @@ const Hotel = ({hotel}) => {
               &times;
             </span>
             <h1 className='text-2xl font-bold text-red-800 p-2'>{hotel.name}</h1>
-            <img src={hotel.image} className='w-60 h-60 ml-10' ></img>
+            <Canvas
+        camera={{
+          fov: 45,
+          near: 0.1,
+          far: 2000,
+          position: [-2, 5, 0],
+        }}
+      >
+         <Room />
+        <CameraControls makeDefault />
+       
+      </Canvas>
             
             <h1 className='text-2xl font-bold text-gray-800 p-2 max-w-xs whitespace-pre-line' >{hotel.description}</h1>
             
