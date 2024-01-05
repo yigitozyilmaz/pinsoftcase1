@@ -1,0 +1,17 @@
+
+.cartDiv{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    margin-left: 10px;
+    
+    
+}
+.hotellistDiv{
+    display: grid;
+}
+#favlist{
+    margin-left: 68%;
+}
