@@ -3,7 +3,7 @@ import hotellist from "../data/hotels.json"
 import Hotel from "./hotel.js"
 import './hotelList.css';
 import { useHistory } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { red } from "@mui/material/colors";
 const HotelList = () => { 
@@ -44,9 +44,9 @@ function onSuccess(postion){
 
 }
 function onError(error){
-  if(error.code==1){
+  if(error.code===1){
     alert("user refused perm")
-  }else if(error.code==2){
+  }else if(error.code===2){
     alert("can't get location data")
   }else{
     alert("error")

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Hotel from "./hotel/hotel.js"
 import { useHistory } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { red } from "@mui/material/colors";
 
