@@ -7,7 +7,7 @@ import { red } from "@mui/material/colors";
 
 
 
-const favpage = () => { 
+const Favpage = () => { 
    
     const cartItems = useSelector((state) => state.cart);  
 
@@ -51,4 +51,4 @@ return(
 
 
 ) }
-export default favpage;
+export default Favpage;
