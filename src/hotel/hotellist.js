@@ -59,6 +59,7 @@ return(
           value={inputValue}
           placeholder="Search"
           onChange={(e) => setInputValue(e.target.value)}
+          id="input"
         />
         <div className="m-6 "id="favlist">
           <label onClick={handleFavoriteClick} style={{ cursor: 'pointer' }}>
