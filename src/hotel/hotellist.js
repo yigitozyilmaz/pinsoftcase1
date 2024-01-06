@@ -9,11 +9,51 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { red } from "@mui/material/colors";
 const HotelList = () => { 
   const [inputValue, setInputValue] = useState("");
-  const [categories, setCategories] = useState([]);
   const [checkedLocation, setCheckedLocation] = useState([]);
+  const [locationDetails, setLocationDetails] = useState({
+    country: '',
+    district: '',
+    town: '',
+  });
+useEffect(()=>{
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(onSuccess, onError)
+    }else{
+      alert("Try another explorer")
+    }
+},[])
 
+function onSuccess(postion){
+ let lat=postion.coords.latitude;
+ let long= postion.coords.longitude;
+ const url= `https://geocode.maps.co/reverse?lat=${lat}&lon=${long}&api_key=659976a9a5780120429851toh98fc97`;
+ fetch(url)
+ .then(response=>response.json())
+ .then(result => {
+  console.log(result);
+  let details = result.address;
 
+  let {country,district,town } = details;
+  
+  setLocationDetails({
+    country,
+    district,
+    town,
+  });
+  
+});
 
+}
+function onError(error){
+  if(error.code==1){
+    alert("user refused perm")
+  }else if(error.code==2){
+    alert("can't get location data")
+  }else{
+    alert("error")
+  }
+
+}
     let result = hotellist.filter(function (obj) {
       if (checkedLocation.length > 0) {
         
@@ -61,6 +101,9 @@ return(
           onChange={(e) => setInputValue(e.target.value)}
           id="input"
         />
+        <div>
+         <h1 className="text-lg font-bold p-2 mt-4 ml-10 text-gray-500" id="location">Current Location: {locationDetails.country}, {locationDetails.district}, {locationDetails.town}</h1>
+        </div>
         <div className="m-6 "id="favlist">
           <label onClick={handleFavoriteClick} style={{ cursor: 'pointer' }}>
             <span className="font-bold">Fav List</span>
