@@ -56,7 +56,7 @@ const Hotel = ({hotel}) => {
     return (
         
         <div  className='bg-gray-100 h-96 w-60 m-10 text-center grid place-items-center border border-gray-300 rounded-md' id='hotelCardDiv'>
-         <img src={hotel.image} className='w-52 h-52' id='img'></img>
+         <img src={hotel.image} className='w-52 h-52' id='img' alt="Description"></img>
          <h1 className='text-xl font-bold text-gray-800'>{hotel.name}</h1>
          <h1 className='font-bold text-gray-600'>{hotel.location.split(",")[0]}</h1>
          <h1 className='font-bold ' >{hotel.price} TL</h1>
