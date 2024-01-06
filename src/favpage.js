@@ -27,7 +27,7 @@ return(
         
         />
  <div>
-         <h1 className="text-lg font-bold p-2 mt-4 ml-10 text-gray-500" id="location"></h1>
+         <h1 className="text-lg font-bold p-2 mt-4 ml-10 text-White-100"  id="location">_</h1>
         </div>
         
         <div className="m-6 "id="favlist">
