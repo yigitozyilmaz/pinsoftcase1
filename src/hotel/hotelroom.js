@@ -1,11 +1,9 @@
 import {
   Environment,
   useGLTF,
-  PresentationControls,
-  useAnimations,
-} from "@react-three/drei";
+ } from "@react-three/drei";
 import room from "./hotelroom.glb";
-import React, { useEffect, useState, Suspense, useRef } from "react";
+
 
 
 

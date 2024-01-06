@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import hotellist from "../data/hotels.json"
 import Hotel from "./hotel.js"
 import './hotelList.css';

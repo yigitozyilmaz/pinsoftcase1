@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch,useSelector } from "react-redux";
 import { addToCart } from "../redux/actions";
 import './hotel.css';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import { red } from '@mui/material/colors';
 import Room from "./hotelroom.js";
