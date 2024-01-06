@@ -9,4 +9,5 @@ lokasyona izin verirseniz konum bilginizi long lat olarak çekip bir api yardım
 redux kısmını fav list için kullandım sayfa refreshlenince kaybolmasın diye localstorage e attım.
 details butonu ile gelen verilerin room bilgisi görünürken oraya drei kullanarak canvas içine 3d bir room öğesi ekledim bu tabi db de nasıl saklanır vs. düşünülür sonuçta prototip.
 Bu canvas içinde scroll ile zoom out yada in yapıp maus sağ tık ile objeyi kaydırabilirsiniz. 
-netlify linki buraya ekleyeceğim.
+Canlı hali için :
+https://master--idyllic-valkyrie-e5207b.netlify.app
